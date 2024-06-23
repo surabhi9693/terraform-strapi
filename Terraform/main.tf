@@ -72,7 +72,7 @@ resource "aws_instance" "strapi-ec2" {
   instance_type               = "t2.medium"
   vpc_security_group_ids      = [aws_security_group.strapisg.id]
   subnet_id                   = aws_subnet.publicsubnet.id
-  key_name                    = "strapikey"
+  key_name                    = "taskspt"
   associate_public_ip_address = true
   tags = {
     Name = "strapi-ec2"
