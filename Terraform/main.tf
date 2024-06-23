@@ -66,7 +66,7 @@ resource "aws_security_group" "strapisg" {
 
 }
 
-resource "aws_instance" "strapi-ec2" {
+resource "aws_instance" "strapi-ec2-app" {
   ami                         = "ami-03c983f9003cb9cd1"
   availability_zone = "us-west-2a"
   instance_type               = "t2.medium"
@@ -75,7 +75,7 @@ resource "aws_instance" "strapi-ec2" {
   key_name                    = "strapi"
   associate_public_ip_address = true
   tags = {
-    Name = "strapi-ec2"
+    Name = "strapi-ec2-app"
   }
 }
 
@@ -86,7 +86,7 @@ resource "null_resource" "example" {
       type        = "ssh"
       user        = "ubuntu"
       private_key = file("~/.ssh/id_rsa") 
-      host        = aws_instance.strapi-ec2.public_ip
+      host        = aws_instance.strapi-ec2-app.public_ip
     }
     inline = [
       "sudo apt-get update",
@@ -105,6 +105,6 @@ resource "null_resource" "example" {
     ]
 }
  depends_on = [
-    aws_instance.strapi-ec2
+    aws_instance.strapi-ec2-app
   ]
   }
