@@ -94,7 +94,7 @@ resource "null_resource" "example" {
       "sudo apt-get install -y nodejs",
       "sudo npm install -g pm2",
       "cd /srv",
-      "sudo git clone https://github.com/PearlThoughts-DevOps-Internship/strapi",
+      "sudo git clone https://github.com/surabhi9693/terraform-strapi.git",
       "sudo chown -R ubuntu:ubuntu /srv/strapi",
       "sudo chmod -R 755 /srv/strapi",
       "cd /srv/strapi",
