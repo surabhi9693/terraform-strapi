@@ -85,7 +85,7 @@ resource "null_resource" "example" {
       connection {
       type        = "ssh"
       user        = "ubuntu"
-      private_key = file("~/.ssh/id_rsa") 
+      private_key = file("/home/ubuntu/.ssh/id_rsa") 
       host        = aws_instance.strapi-ec2.public_ip
     }
     inline = [
