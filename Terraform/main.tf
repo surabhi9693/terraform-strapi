@@ -97,7 +97,7 @@ resource "null_resource" "example" {
       "sudo git clone https://github.com/surabhi9693/task-2-strapi-github.git",
       "sudo chown -R ubuntu:ubuntu /srv/task-2-strapi-github",
       "sudo chmod -R 755 /srv/task-2-strapi-github",
-      "cd /srv/terraform-strapi/srv/task-2-strapi-github",
+      "cd /srv/task-2-strapi-github",
       "sudo npm install",
       "pm2 start npm --name strapi -- run develop",
       "pm2 save"
