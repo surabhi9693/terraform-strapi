@@ -98,7 +98,6 @@ resource "null_resource" "example" {
       "sudo chown -R ubuntu:ubuntu /srv/strapi",
       "sudo chmod -R 755 /srv/strapi",
       "cd /srv/strapi",
-      "git checkout -f surabhi-prod",
       "sudo npm install",
       "pm2 start npm --name strapi -- run develop",
       "pm2 save"
