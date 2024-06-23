@@ -4,7 +4,7 @@ provider "aws" {
 resource "aws_vpc" "customizevpc" {
   cidr_block = "192.168.0.0/16"
   tags = {
-    name = "strapi-app-vpc"
+    name = "strapi-ec2-vpc"
   }
 }
 
